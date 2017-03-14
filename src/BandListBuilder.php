@@ -20,8 +20,8 @@ class BandListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('Band ID');
     $header['name'] = $this->t('Name');
+    $header['year'] = $this->t('Year(s)');
     return $header + parent::buildHeader();
   }
 
@@ -30,7 +30,6 @@ class BandListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\hcbeerfest_core\Entity\Band */
-    $row['id'] = $entity->id();
     $row['name'] = $this->l(
       $entity->label(),
       new Url(
@@ -39,6 +38,11 @@ class BandListBuilder extends EntityListBuilder {
         )
       )
     );
+    $years = [];
+    foreach ($entity->getFestivals() as $festival) {
+      $years[] = $festival->getName();
+    }
+    $row['year'] = implode(', ', $years);
     return $row + parent::buildRow($entity);
   }
 

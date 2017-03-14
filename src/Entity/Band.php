@@ -209,6 +209,17 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
   /**
    * {@inheritdoc}
    */
+  public function getFestivals() {
+    $festivals = [];
+    foreach ($this->get('festival') as $festival) {
+      $festivals[] = $festival->entity;
+    }
+    return $festivals;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
