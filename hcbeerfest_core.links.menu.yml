@@ -68,3 +68,17 @@ vendor.admin.structure.settings:
   description: 'Configure Vendor entities'
   route_name: vendor.settings
   parent: system.admin_structure
+
+# Seminar menu items definition
+entity.seminar.collection:
+  title: 'Seminar list'
+  route_name: entity.seminar.collection
+  description: 'List Seminar entities'
+  parent: system.admin_structure
+  weight: 100
+
+seminar.admin.structure.settings:
+  title: Seminar settings
+  description: 'Configure Seminar entities'
+  route_name: seminar.settings
+  parent: system.admin_structure

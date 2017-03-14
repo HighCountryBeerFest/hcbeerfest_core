@@ -23,3 +23,8 @@ entity.vendor.add_form:
   title: 'Add Vendor'
   appears_on:
     - entity.vendor.collection
+entity.seminar.add_form:
+  route_name: entity.seminar.add_form
+  title: 'Add Seminar'
+  appears_on:
+    - entity.seminar.collection

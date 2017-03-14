@@ -133,3 +133,30 @@ entity.vendor.delete_form:
   title: Delete
   weight: 10
 
+# Seminar routing definition
+seminar.settings_tab:
+  route_name: seminar.settings
+  title: 'Settings'
+  base_route: seminar.settings
+
+entity.seminar.canonical:
+  route_name: entity.seminar.canonical
+  base_route: entity.seminar.canonical
+  title: 'View'
+
+entity.seminar.edit_form:
+  route_name: entity.seminar.edit_form
+  base_route: entity.seminar.canonical
+  title: 'Edit'
+
+entity.seminar.version_history:
+  route_name: entity.seminar.version_history
+  base_route: entity.seminar.canonical
+  title: 'Revisions'
+
+entity.seminar.delete_form:
+  route_name:  entity.seminar.delete_form
+  base_route:  entity.seminar.canonical
+  title: Delete
+  weight: 10
+

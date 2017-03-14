@@ -163,3 +163,36 @@ revert all vendor revisions:
 delete all vendor revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Vendor revisions</em> and <em>delete rights</em> for vendor entities in question or <em>administer vendor entities</em>.'
+add seminar entities:
+  title: 'Create new Seminar entities'
+
+administer seminar entities:
+  title: 'Administer Seminar entities'
+  description: 'Allow to access the administration form to configure Seminar entities.'
+  restrict access: true
+
+delete seminar entities:
+  title: 'Delete Seminar entities'
+
+edit seminar entities:
+  title: 'Edit Seminar entities'
+
+access seminar overview:
+  title: 'Access the Seminar overview page'
+
+view published seminar entities:
+  title: 'View published Seminar entities'
+
+view unpublished seminar entities:
+  title: 'View unpublished Seminar entities'
+
+view all seminar revisions:
+  title: 'View all Seminar revisions'
+
+revert all seminar revisions:
+  title: 'Revert all Seminar revisions'
+  description: 'Role requires permission <em>view Seminar revisions</em> and <em>edit rights</em> for seminar entities in question or <em>administer seminar entities</em>.'
+
+delete all seminar revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Seminar revisions</em> and <em>delete rights</em> for seminar entities in question or <em>administer seminar entities</em>.'
