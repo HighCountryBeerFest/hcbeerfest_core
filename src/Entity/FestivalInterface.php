@@ -115,4 +115,12 @@ interface FestivalInterface extends RevisionableInterface, RevisionLogInterface,
    */
   public function setRevisionUserId($uid);
 
+  /**
+   * Is the festival public?
+   *
+   * @return boolean
+   *   If the festival is public.
+   */
+  public function isPublic();
+
 }

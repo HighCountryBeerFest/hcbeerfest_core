@@ -20,8 +20,8 @@ class FestivalListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('Festival ID');
     $header['name'] = $this->t('Name');
+    $header['is_public'] = $this->t('Is public?');
     return $header + parent::buildHeader();
   }
 
@@ -30,7 +30,6 @@ class FestivalListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\hcbeerfest_core\Entity\Festival */
-    $row['id'] = $entity->id();
     $row['name'] = $this->l(
       $entity->label(),
       new Url(
@@ -39,6 +38,7 @@ class FestivalListBuilder extends EntityListBuilder {
         )
       )
     );
+    $row['is_public'] = ($entity->isPublic()) ? 'Yes': 'No';
     return $row + parent::buildRow($entity);
   }
 

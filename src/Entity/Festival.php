@@ -209,6 +209,13 @@ class Festival extends RevisionableContentEntityBase implements FestivalInterfac
   /**
    * {@inheritdoc}
    */
+  public function isPublic() {
+    return $this->get('public')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
