@@ -18,10 +18,9 @@ class Sponsors extends ControllerBase {
    *   Return Hello string.
    */
   public function index() {
-    return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: index')
-    ];
+    return array(
+      '#theme' => 'hcbeerfest_sponsors',
+    );
   }
 
 }

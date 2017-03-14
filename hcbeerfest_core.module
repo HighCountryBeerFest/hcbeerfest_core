@@ -39,6 +39,18 @@ function hcbeerfest_core_theme() {
     'hcbeerfest_about' => array(
       'template' => 'hcbeerfest_about',
       'variables' => array(),
-    )
+    ),
+    'hcbeerfest_sponsors' => array(
+      'template' => 'hcbeerfest_sponsors',
+      'variables' => array(),
+    ),
+    'hcbeerfest_food' => array(
+      'template' => 'hcbeerfest_food',
+      'variables' => array(),
+    ),
+    'hcbeerfest_seminars' => array(
+      'template' => 'hcbeerfest_seminars',
+      'variables' => array(),
+    ),
   );
 }
