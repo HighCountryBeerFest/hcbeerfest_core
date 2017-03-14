@@ -35,6 +35,10 @@ function hcbeerfest_core_theme() {
     'hcbeerfest_breweries' => array(
       'template' => 'hcbeerfest_breweries',
       'variables' => array('breweries' => NULL),
+    ),
+    'hcbeerfest_about' => array(
+      'template' => 'hcbeerfest_about',
+      'variables' => array(),
     )
   );
 }
