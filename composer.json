@@ -1,14 +1,13 @@
 {
   "name": "drupal/hcbeerfest_core",
   "type": "drupal-module",
-  "description": "A module for the HCBF",
+  "description": "A core module for the High Country Beer Festival",
   "keywords": ["Drupal"],
-  "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/hcbeerfest_core",
+  "homepage": "https://github.com/HighCountryBeerFest/hcbeerfest_core",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://www.drupal.org/project/issues/hcbeerfest_core",
-    "source": "http://cgit.drupalcode.org/hcbeerfest_core"
+    "issues": "https://github.com/HighCountryBeerFest/hcbeerfest_core/issues",
+    "source": "https://github.com/HighCountryBeerFest/hcbeerfest_core.git"
   },
   "require": { }
 }
