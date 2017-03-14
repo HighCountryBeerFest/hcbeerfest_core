@@ -31,3 +31,36 @@ revert all festival revisions:
 delete all festival revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Festival revisions</em> and <em>delete rights</em> for festival entities in question or <em>administer festival entities</em>.'
+add brewery entities:
+  title: 'Create new Brewery entities'
+
+administer brewery entities:
+  title: 'Administer Brewery entities'
+  description: 'Allow to access the administration form to configure Brewery entities.'
+  restrict access: true
+
+delete brewery entities:
+  title: 'Delete Brewery entities'
+
+edit brewery entities:
+  title: 'Edit Brewery entities'
+
+access brewery overview:
+  title: 'Access the Brewery overview page'
+
+view published brewery entities:
+  title: 'View published Brewery entities'
+
+view unpublished brewery entities:
+  title: 'View unpublished Brewery entities'
+
+view all brewery revisions:
+  title: 'View all Brewery revisions'
+
+revert all brewery revisions:
+  title: 'Revert all Brewery revisions'
+  description: 'Role requires permission <em>view Brewery revisions</em> and <em>edit rights</em> for brewery entities in question or <em>administer brewery entities</em>.'
+
+delete all brewery revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Brewery revisions</em> and <em>delete rights</em> for brewery entities in question or <em>administer brewery entities</em>.'

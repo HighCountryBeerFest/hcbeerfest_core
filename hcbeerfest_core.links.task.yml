@@ -25,3 +25,30 @@ entity.festival.delete_form:
   title: Delete
   weight: 10
 
+# Brewery routing definition
+brewery.settings_tab:
+  route_name: brewery.settings
+  title: 'Settings'
+  base_route: brewery.settings
+
+entity.brewery.canonical:
+  route_name: entity.brewery.canonical
+  base_route: entity.brewery.canonical
+  title: 'View'
+
+entity.brewery.edit_form:
+  route_name: entity.brewery.edit_form
+  base_route: entity.brewery.canonical
+  title: 'Edit'
+
+entity.brewery.version_history:
+  route_name: entity.brewery.version_history
+  base_route: entity.brewery.canonical
+  title: 'Revisions'
+
+entity.brewery.delete_form:
+  route_name:  entity.brewery.delete_form
+  base_route:  entity.brewery.canonical
+  title: Delete
+  weight: 10
+

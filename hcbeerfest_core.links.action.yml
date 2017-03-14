@@ -3,3 +3,8 @@ entity.festival.add_form:
   title: 'Add Festival'
   appears_on:
     - entity.festival.collection
+entity.brewery.add_form:
+  route_name: entity.brewery.add_form
+  title: 'Add Brewery'
+  appears_on:
+    - entity.brewery.collection

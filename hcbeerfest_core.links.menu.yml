@@ -12,3 +12,17 @@ festival.admin.structure.settings:
   description: 'Configure Festival entities'
   route_name: festival.settings
   parent: system.admin_structure
+
+# Brewery menu items definition
+entity.brewery.collection:
+  title: 'Brewery list'
+  route_name: entity.brewery.collection
+  description: 'List Brewery entities'
+  parent: system.admin_structure
+  weight: 100
+
+brewery.admin.structure.settings:
+  title: Brewery settings
+  description: 'Configure Brewery entities'
+  route_name: brewery.settings
+  parent: system.admin_structure
