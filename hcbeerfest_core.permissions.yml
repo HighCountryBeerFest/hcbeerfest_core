@@ -97,3 +97,36 @@ revert all sponsor revisions:
 delete all sponsor revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Sponsor revisions</em> and <em>delete rights</em> for sponsor entities in question or <em>administer sponsor entities</em>.'
+add band entities:
+  title: 'Create new Band entities'
+
+administer band entities:
+  title: 'Administer Band entities'
+  description: 'Allow to access the administration form to configure Band entities.'
+  restrict access: true
+
+delete band entities:
+  title: 'Delete Band entities'
+
+edit band entities:
+  title: 'Edit Band entities'
+
+access band overview:
+  title: 'Access the Band overview page'
+
+view published band entities:
+  title: 'View published Band entities'
+
+view unpublished band entities:
+  title: 'View unpublished Band entities'
+
+view all band revisions:
+  title: 'View all Band revisions'
+
+revert all band revisions:
+  title: 'Revert all Band revisions'
+  description: 'Role requires permission <em>view Band revisions</em> and <em>edit rights</em> for band entities in question or <em>administer band entities</em>.'
+
+delete all band revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Band revisions</em> and <em>delete rights</em> for band entities in question or <em>administer band entities</em>.'

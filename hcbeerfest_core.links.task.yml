@@ -79,3 +79,30 @@ entity.sponsor.delete_form:
   title: Delete
   weight: 10
 
+# Band routing definition
+band.settings_tab:
+  route_name: band.settings
+  title: 'Settings'
+  base_route: band.settings
+
+entity.band.canonical:
+  route_name: entity.band.canonical
+  base_route: entity.band.canonical
+  title: 'View'
+
+entity.band.edit_form:
+  route_name: entity.band.edit_form
+  base_route: entity.band.canonical
+  title: 'Edit'
+
+entity.band.version_history:
+  route_name: entity.band.version_history
+  base_route: entity.band.canonical
+  title: 'Revisions'
+
+entity.band.delete_form:
+  route_name:  entity.band.delete_form
+  base_route:  entity.band.canonical
+  title: Delete
+  weight: 10
+

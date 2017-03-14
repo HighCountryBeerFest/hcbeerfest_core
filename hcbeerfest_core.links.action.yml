@@ -13,3 +13,8 @@ entity.sponsor.add_form:
   title: 'Add Sponsor'
   appears_on:
     - entity.sponsor.collection
+entity.band.add_form:
+  route_name: entity.band.add_form
+  title: 'Add Band'
+  appears_on:
+    - entity.band.collection

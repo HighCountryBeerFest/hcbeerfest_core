@@ -40,3 +40,17 @@ sponsor.admin.structure.settings:
   description: 'Configure Sponsor entities'
   route_name: sponsor.settings
   parent: system.admin_structure
+
+# Band menu items definition
+entity.band.collection:
+  title: 'Band list'
+  route_name: entity.band.collection
+  description: 'List Band entities'
+  parent: system.admin_structure
+  weight: 100
+
+band.admin.structure.settings:
+  title: Band settings
+  description: 'Configure Band entities'
+  route_name: band.settings
+  parent: system.admin_structure
