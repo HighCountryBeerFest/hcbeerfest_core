@@ -238,8 +238,8 @@ class Festival extends RevisionableContentEntityBase implements FestivalInterfac
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Festival entity.'))
+      ->setLabel(t('Year'))
+      ->setDescription(t('The year of this festival.'))
       ->setRevisionable(TRUE)
       ->setSettings(array(
         'max_length' => 50,
@@ -254,6 +254,27 @@ class Festival extends RevisionableContentEntityBase implements FestivalInterfac
       ->setDisplayOptions('form', array(
         'type' => 'string_textfield',
         'weight' => -4,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['public'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Is public?'))
+      ->setDescription(t('Is this festival public?'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('view', array(
+        'settings' => [
+        'format' => 'unicode-yes-no',
+        ],
+        'weight' => -3,
+        ))
+      ->setDisplayOptions('form', array(
+        'settings' => [
+        'display_label' => TRUE,
+        ],
+        'type' => 'boolean_checkbox',
+        'weight' => -3,
       ))
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
