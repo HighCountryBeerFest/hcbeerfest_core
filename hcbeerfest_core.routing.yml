@@ -2,8 +2,8 @@
 hcbeerfest_core.music_page_index:
   path: '/music'
   defaults:
-    _controller: '\Drupal\hcbeerfest_core\Controller\MusicPage::index'
-    _title: 'Music'
+    _controller: '\Drupal\hcbeerfest_core\Controller\Music::index'
+    _title: 'The music'
   requirements:
     _permission: 'access content'
 
@@ -11,6 +11,6 @@ hcbeerfest_core.breweries_index:
   path: '/breweries'
   defaults:
     _controller: '\Drupal\hcbeerfest_core\Controller\Breweries::index'
-    _title: 'index'
+    _title: 'The breweries'
   requirements:
     _permission: 'access content'
