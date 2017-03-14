@@ -262,6 +262,7 @@ class Vendor extends RevisionableContentEntityBase implements VendorInterface {
       ->setLabel(t('Festival'))
       ->setDescription(t('The festival this vendor is vending at.'))
       ->setSetting('target_type', 'festival')
+      ->setCardinality(-1)
       ->setTargetEntityTypeId('festival')
       ->setDisplayOptions('view', array(
         'label'  => 'hidden',

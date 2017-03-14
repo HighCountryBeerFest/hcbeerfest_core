@@ -262,6 +262,7 @@ class Brewery extends RevisionableContentEntityBase implements BreweryInterface 
       ->setLabel(t('Festival'))
       ->setDescription(t('The festival this brewery is pouring beer at.'))
       ->setSetting('target_type', 'festival')
+      ->setCardinality(-1)
       ->setTargetEntityTypeId('festival')
       ->setDisplayOptions('view', array(
         'label'  => 'hidden',

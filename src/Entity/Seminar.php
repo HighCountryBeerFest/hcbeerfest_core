@@ -262,6 +262,7 @@ class Seminar extends RevisionableContentEntityBase implements SeminarInterface 
       ->setLabel(t('Festival'))
       ->setDescription(t('The festival this seminar is at.'))
       ->setSetting('target_type', 'festival')
+      ->setCardinality(-1)
       ->setTargetEntityTypeId('festival')
       ->setDisplayOptions('view', array(
         'label'  => 'hidden',

@@ -262,6 +262,7 @@ class Sponsor extends RevisionableContentEntityBase implements SponsorInterface 
       ->setLabel(t('Festival'))
       ->setDescription(t('The festival this company is sponsoring.'))
       ->setSetting('target_type', 'festival')
+      ->setCardinality(-1)
       ->setTargetEntityTypeId('festival')
       ->setDisplayOptions('view', array(
         'label'  => 'hidden',
