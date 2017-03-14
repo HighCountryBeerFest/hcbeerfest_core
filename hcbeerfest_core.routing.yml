@@ -19,6 +19,6 @@ hcbeerfest_core.about_index:
   path: '/about'
   defaults:
     _controller: '\Drupal\hcbeerfest_core\Controller\About::index'
-    _title: 'About'
+    _title: 'About the High Country Beer Festival'
   requirements:
     _permission: 'access content'
