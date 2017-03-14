@@ -14,3 +14,11 @@ hcbeerfest_core.breweries_index:
     _title: 'The breweries'
   requirements:
     _permission: 'access content'
+
+hcbeerfest_core.about_index:
+  path: '/about'
+  defaults:
+    _controller: '\Drupal\hcbeerfest_core\Controller\About::index'
+    _title: 'About'
+  requirements:
+    _permission: 'access content'
