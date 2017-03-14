@@ -9,7 +9,7 @@ use Drupal\Core\Controller\ControllerBase;
  *
  * @package Drupal\hcbeerfest_core\Controller
  */
-class MusicPage extends ControllerBase {
+class Music extends ControllerBase {
 
   /**
    * Index.
