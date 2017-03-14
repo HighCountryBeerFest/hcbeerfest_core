@@ -258,6 +258,29 @@ class Brewery extends RevisionableContentEntityBase implements BreweryInterface 
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['festival'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Festival'))
+      ->setDescription(t('The festival this brewery is pouring beer at.'))
+      ->setSetting('target_type', 'festival')
+      ->setTargetEntityTypeId('festival')
+      ->setDisplayOptions('view', array(
+        'label'  => 'hidden',
+        'type'   => 'festival',
+        'weight' => 0,
+        ))
+      ->setDisplayOptions('form', array(
+        'type'     => 'entity_reference_autocomplete',
+        'weight'   => 5,
+        'settings' => array(
+          'match_operator'    => 'CONTAINS',
+          'size'              => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder'       => '',
+          ),
+        ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Brewery is published.'))
