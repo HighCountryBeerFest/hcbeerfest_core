@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains hcbeerfest_core.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hcbeerfest_core_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hcbeerfest_core module.
+    case 'help.page.hcbeerfest_core':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module for the HCBF') . '</p>';
+      return $output;
+
+    default:
+  }
+}
