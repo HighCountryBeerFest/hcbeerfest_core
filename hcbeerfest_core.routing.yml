@@ -22,3 +22,11 @@ hcbeerfest_core.about_index:
     _title: 'About the High Country Beer Festival'
   requirements:
     _permission: 'access content'
+
+hcbeerfest_core.sponsors_index:
+  path: '/sponsors'
+  defaults:
+    _controller: '\Drupal\hcbeerfest_core\Controller\Sponsors::index'
+    _title: 'Our sponsors'
+  requirements:
+    _permission: 'access content'
