@@ -18,17 +18,17 @@ class MusicPage extends ControllerBase {
    *   Return a render array of the page content.
    */
   public function index() {
-    $bands = [];
+    $bands = array();
 
     $bands_query = \Drupal::entityQuery('band');
     $bands_result = $bands_query->execute();
     $entity_storage = \Drupal::entityManager()->getStorage('band');
 
     foreach ($bands_result as $band) {
-      $bands[] = [
+      $bands[] = array(
         'title' => $entity_storage->load($band)->getWebsiteLink(),
         'description' => $entity_storage->load($band)->getDescription(),
-      ];
+      );
     }
 
     return [
@@ -36,5 +36,4 @@ class MusicPage extends ControllerBase {
       '#bands' => $bands,
     ];
   }
-
 }

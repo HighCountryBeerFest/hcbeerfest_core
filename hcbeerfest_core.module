@@ -27,10 +27,14 @@ function hcbeerfest_core_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_theme();
  */
 function hcbeerfest_core_theme() {
-  return [
-    'hcbeerfest_music' => [
+  return array(
+    'hcbeerfest_music' => array(
       'template' => 'hcbeerfest_music',
-      'variables' => ['bands' => NULL],
-    ]
-  ];
+      'variables' => array('bands' => NULL),
+    ),
+    'hcbeerfest_breweries' => array(
+      'template' => 'hcbeerfest_breweries',
+      'variables' => array('breweries' => NULL),
+    )
+  );
 }
