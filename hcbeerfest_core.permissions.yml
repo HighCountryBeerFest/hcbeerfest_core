@@ -1,0 +1,33 @@
+add festival entities:
+  title: 'Create new Festival entities'
+
+administer festival entities:
+  title: 'Administer Festival entities'
+  description: 'Allow to access the administration form to configure Festival entities.'
+  restrict access: true
+
+delete festival entities:
+  title: 'Delete Festival entities'
+
+edit festival entities:
+  title: 'Edit Festival entities'
+
+access festival overview:
+  title: 'Access the Festival overview page'
+
+view published festival entities:
+  title: 'View published Festival entities'
+
+view unpublished festival entities:
+  title: 'View unpublished Festival entities'
+
+view all festival revisions:
+  title: 'View all Festival revisions'
+
+revert all festival revisions:
+  title: 'Revert all Festival revisions'
+  description: 'Role requires permission <em>view Festival revisions</em> and <em>edit rights</em> for festival entities in question or <em>administer festival entities</em>.'
+
+delete all festival revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Festival revisions</em> and <em>delete rights</em> for festival entities in question or <em>administer festival entities</em>.'

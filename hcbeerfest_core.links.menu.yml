@@ -1,0 +1,14 @@
+
+# Festival menu items definition
+entity.festival.collection:
+  title: 'Festival list'
+  route_name: entity.festival.collection
+  description: 'List Festival entities'
+  parent: system.admin_structure
+  weight: 100
+
+festival.admin.structure.settings:
+  title: Festival settings
+  description: 'Configure Festival entities'
+  route_name: festival.settings
+  parent: system.admin_structure

@@ -1,0 +1,5 @@
+entity.festival.add_form:
+  route_name: entity.festival.add_form
+  title: 'Add Festival'
+  appears_on:
+    - entity.festival.collection

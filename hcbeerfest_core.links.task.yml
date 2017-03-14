@@ -1,0 +1,27 @@
+# Festival routing definition
+festival.settings_tab:
+  route_name: festival.settings
+  title: 'Settings'
+  base_route: festival.settings
+
+entity.festival.canonical:
+  route_name: entity.festival.canonical
+  base_route: entity.festival.canonical
+  title: 'View'
+
+entity.festival.edit_form:
+  route_name: entity.festival.edit_form
+  base_route: entity.festival.canonical
+  title: 'Edit'
+
+entity.festival.version_history:
+  route_name: entity.festival.version_history
+  base_route: entity.festival.canonical
+  title: 'Revisions'
+
+entity.festival.delete_form:
+  route_name:  entity.festival.delete_form
+  base_route:  entity.festival.canonical
+  title: Delete
+  weight: 10
+
