@@ -52,3 +52,30 @@ entity.brewery.delete_form:
   title: Delete
   weight: 10
 
+# Sponsor routing definition
+sponsor.settings_tab:
+  route_name: sponsor.settings
+  title: 'Settings'
+  base_route: sponsor.settings
+
+entity.sponsor.canonical:
+  route_name: entity.sponsor.canonical
+  base_route: entity.sponsor.canonical
+  title: 'View'
+
+entity.sponsor.edit_form:
+  route_name: entity.sponsor.edit_form
+  base_route: entity.sponsor.canonical
+  title: 'Edit'
+
+entity.sponsor.version_history:
+  route_name: entity.sponsor.version_history
+  base_route: entity.sponsor.canonical
+  title: 'Revisions'
+
+entity.sponsor.delete_form:
+  route_name:  entity.sponsor.delete_form
+  base_route:  entity.sponsor.canonical
+  title: Delete
+  weight: 10
+

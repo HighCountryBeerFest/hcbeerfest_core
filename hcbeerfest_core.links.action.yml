@@ -8,3 +8,8 @@ entity.brewery.add_form:
   title: 'Add Brewery'
   appears_on:
     - entity.brewery.collection
+entity.sponsor.add_form:
+  route_name: entity.sponsor.add_form
+  title: 'Add Sponsor'
+  appears_on:
+    - entity.sponsor.collection

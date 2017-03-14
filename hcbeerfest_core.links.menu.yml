@@ -26,3 +26,17 @@ brewery.admin.structure.settings:
   description: 'Configure Brewery entities'
   route_name: brewery.settings
   parent: system.admin_structure
+
+# Sponsor menu items definition
+entity.sponsor.collection:
+  title: 'Sponsor list'
+  route_name: entity.sponsor.collection
+  description: 'List Sponsor entities'
+  parent: system.admin_structure
+  weight: 100
+
+sponsor.admin.structure.settings:
+  title: Sponsor settings
+  description: 'Configure Sponsor entities'
+  route_name: sponsor.settings
+  parent: system.admin_structure
