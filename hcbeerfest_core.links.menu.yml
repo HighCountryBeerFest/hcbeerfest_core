@@ -54,3 +54,17 @@ band.admin.structure.settings:
   description: 'Configure Band entities'
   route_name: band.settings
   parent: system.admin_structure
+
+# Vendor menu items definition
+entity.vendor.collection:
+  title: 'Vendor list'
+  route_name: entity.vendor.collection
+  description: 'List Vendor entities'
+  parent: system.admin_structure
+  weight: 100
+
+vendor.admin.structure.settings:
+  title: Vendor settings
+  description: 'Configure Vendor entities'
+  route_name: vendor.settings
+  parent: system.admin_structure

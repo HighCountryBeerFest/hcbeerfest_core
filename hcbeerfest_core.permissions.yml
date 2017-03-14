@@ -130,3 +130,36 @@ revert all band revisions:
 delete all band revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Band revisions</em> and <em>delete rights</em> for band entities in question or <em>administer band entities</em>.'
+add vendor entities:
+  title: 'Create new Vendor entities'
+
+administer vendor entities:
+  title: 'Administer Vendor entities'
+  description: 'Allow to access the administration form to configure Vendor entities.'
+  restrict access: true
+
+delete vendor entities:
+  title: 'Delete Vendor entities'
+
+edit vendor entities:
+  title: 'Edit Vendor entities'
+
+access vendor overview:
+  title: 'Access the Vendor overview page'
+
+view published vendor entities:
+  title: 'View published Vendor entities'
+
+view unpublished vendor entities:
+  title: 'View unpublished Vendor entities'
+
+view all vendor revisions:
+  title: 'View all Vendor revisions'
+
+revert all vendor revisions:
+  title: 'Revert all Vendor revisions'
+  description: 'Role requires permission <em>view Vendor revisions</em> and <em>edit rights</em> for vendor entities in question or <em>administer vendor entities</em>.'
+
+delete all vendor revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Vendor revisions</em> and <em>delete rights</em> for vendor entities in question or <em>administer vendor entities</em>.'
