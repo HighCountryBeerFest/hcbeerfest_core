@@ -22,3 +22,15 @@ function hcbeerfest_core_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme();
+ */
+function hcbeerfest_core_theme() {
+  return [
+    'hcbeerfest_music' => [
+      'template' => 'hcbeerfest_music',
+      'variables' => ['bands' => NULL],
+    ]
+  ];
+}

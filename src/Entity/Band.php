@@ -8,6 +8,8 @@ use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Defines the Band entity.
@@ -215,6 +217,23 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
       $festivals[] = $festival->entity;
     }
     return $festivals;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getWebsiteLink() {
+    return Link::fromTextAndUrl(
+      $this->get('name')->value,
+      Url::fromUri($this->get('uri')->value));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getDescription() {
+    // TODO: Make this return a formatted description
+    return $this->get('description')->value;
   }
 
   /**

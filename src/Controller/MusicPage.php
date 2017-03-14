@@ -14,13 +14,26 @@ class MusicPage extends ControllerBase {
   /**
    * Index.
    *
-   * @return string
-   *   Return Hello string.
+   * @return array
+   *   Return a render array of the page content.
    */
   public function index() {
+    $bands = [];
+
+    $bands_query = \Drupal::entityQuery('band');
+    $bands_result = $bands_query->execute();
+    $entity_storage = \Drupal::entityManager()->getStorage('band');
+
+    foreach ($bands_result as $band) {
+      $bands[] = [
+        'title' => $entity_storage->load($band)->getWebsiteLink(),
+        'description' => $entity_storage->load($band)->getDescription(),
+      ];
+    }
+
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: index')
+      '#theme' => 'hcbeerfest_music',
+      '#bands' => $bands,
     ];
   }
 

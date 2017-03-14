@@ -115,4 +115,27 @@ interface BandInterface extends RevisionableInterface, RevisionLogInterface, Ent
    */
   public function setRevisionUserId($uid);
 
+  /**
+   * Gets the Band festival.
+   *
+   * @return array
+   *   An array of festival entities this band is realted to.
+   */
+  public function getFestivals();
+
+  /**
+   * Gets a link to the Band website.
+   *
+   * @return string
+   *   A string containing a link to the Band website.
+   */
+  public function getWebsiteLink();
+
+  /**
+   * Gets the description of the Band.
+   *
+   * @return string
+   *   A string containing the description.
+   */
+  public function getDescription();
 }
