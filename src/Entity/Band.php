@@ -230,23 +230,7 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setTranslatable(TRUE)
-      ->setDisplayOptions('view', array(
-        'label' => 'hidden',
-        'type' => 'author',
-        'weight' => 0,
-      ))
-      ->setDisplayOptions('form', array(
-        'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'size' => '60',
-          'autocomplete_type' => 'tags',
-          'placeholder' => '',
-        ),
-      ))
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('form', FALSE);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
@@ -275,11 +259,6 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
       ->setSetting('target_type', 'festival')
       ->setCardinality(-1)
       ->setTargetEntityTypeId('festival')
-      ->setDisplayOptions('view', array(
-        'label'  => 'hidden',
-        'type'   => 'festival',
-        'weight' => 0,
-        ))
       ->setDisplayOptions('form', array(
         'type'     => 'entity_reference_autocomplete',
         'weight'   => 5,
@@ -290,17 +269,54 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
           'placeholder'       => '',
           ),
         ))
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('form', TRUE);
+
+      $fields['uri'] = BaseFieldDefinition::create('uri')
+        ->setLabel(t('Website'))
+        ->setDescription(t('A website for this band, example: http://bandname.example.com/'))
+        ->setDisplayOptions('view', array(
+          'label' => 'hidden',
+          'type' => 'uri_link',
+          'weight' => 0,
+        ))
+        ->setDisplayOptions('form', array(
+          'type'   => 'uri',
+          'weight' => 6
+        ))
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE);
 
       $fields['description'] = BaseFieldDefinition::create('text_long')
         ->setLabel(t('Description'))
         ->setDescription(t('A description of this band.'))
+        ->setDisplayOptions('view', array(
+          'label' => 'hidden',
+          'type' => 'text_default',
+          'weight' => 0,
+        ))
         ->setDisplayOptions('form', array(
           'type'   => 'text_textarea',
           'weight' => 6
         ))
-        ->setDisplayConfigurable('form', TRUE);
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE);
+
+    $fields['image'] = BaseFieldDefinition::create('image')
+      ->setLabel(t('Image'))
+      ->setDescription(t('Upload an image for this band.'))
+      ->setSettings(array(
+        'file_directory' => 'images/bands',
+        'alt_field_required' => FALSE,
+        'file_extensions' => 'jpg jpeg png',
+        'min_resolution' => '400x400',
+        'max_resolution' => '1024x768',
+      ))
+      ->setDisplayOptions('form', array(
+        'label' => 'hidden',
+        'type' => 'image_image',
+        'weight' => 0,
+      ))
+      ->setDisplayConfigurable('form', TRUE);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
