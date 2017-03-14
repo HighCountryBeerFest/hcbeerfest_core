@@ -293,6 +293,15 @@ class Band extends RevisionableContentEntityBase implements BandInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+      $fields['description'] = BaseFieldDefinition::create('text_long')
+        ->setLabel(t('Description'))
+        ->setDescription(t('A description of this band.'))
+        ->setDisplayOptions('form', array(
+          'type'   => 'text_textarea',
+          'weight' => 6
+        ))
+        ->setDisplayConfigurable('form', TRUE);
+
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Band is published.'))
