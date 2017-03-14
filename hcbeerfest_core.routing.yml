@@ -1,0 +1,8 @@
+
+hcbeerfest_core.music_page_index:
+  path: '/music'
+  defaults:
+    _controller: '\Drupal\hcbeerfest_core\Controller\MusicPage::index'
+    _title: 'Music'
+  requirements:
+    _permission: 'access content'
