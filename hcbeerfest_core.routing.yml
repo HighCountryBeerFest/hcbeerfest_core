@@ -35,6 +35,5 @@ hcbeerfest_core.home_index:
   path: '/home'
   defaults:
     _controller: '\Drupal\hcbeerfest_core\Controller\Home::index'
-    _title: 'Home page'
   requirements:
     _permission: 'access content'
