@@ -30,3 +30,11 @@ hcbeerfest_core.sponsors_index:
     _title: 'Our sponsors'
   requirements:
     _permission: 'access content'
+
+hcbeerfest_core.home_index:
+  path: '/home'
+  defaults:
+    _controller: '\Drupal\hcbeerfest_core\Controller\Home::index'
+    _title: 'Home page'
+  requirements:
+    _permission: 'access content'
