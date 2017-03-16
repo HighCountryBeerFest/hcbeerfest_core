@@ -15,23 +15,6 @@ use Drupal\Core\Form\FormStateInterface;
 class FestivalSettingsForm extends FormBase {
 
   /**
-   * Implements a constructor.
-   */
-  public function __construct() {
-    $this->registration_types = array(
-      'brewery',
-      'sponsor',
-      'volunteer',
-    );
-
-    $this->ticket_types = array(
-      'regular',
-      'vip',
-      'dd',
-    );
-   }
-
-  /**
    * Returns a unique string identifying the form.
    *
    * @return string
@@ -57,7 +40,7 @@ class FestivalSettingsForm extends FormBase {
     \Drupal::state()->set('hcbeerfest_core_week_of_message', $form_state->getValue('week_of_message'));
 
     // Handles the registration types
-    foreach ($this->registration_types as $type) {
+    foreach (REGISTRATION_TYPES as $type) {
       \Drupal::state()->set('hcbeerfest_core_registration_' . $type, $form_state->getValue('registration_' . $type));
     }
 
@@ -67,13 +50,8 @@ class FestivalSettingsForm extends FormBase {
     // Sets tickets on sale.
     \Drupal::state()->set('hcbeerfest_core_tickets_on_sale', $form_state->getValue('tickets_on_sale'));
 
-    $ticket_options = array(
-      'tickets_on_sale_',
-      'tickets_price_',
-      'tickets_link_',
-    );
-    foreach ($this->ticket_types as $type) {
-      foreach ($ticket_options as $option) {
+    foreach (TICKET_TYPES as $type) {
+      foreach (TICKET_OPTIONS as $option) {
         \Drupal::state()->set('hcbeerfest_core_' . $option . $type, $form_state->getValue($option . $type));
       }
     }
@@ -131,7 +109,7 @@ class FestivalSettingsForm extends FormBase {
       '#title' => $this->t('Registration settings'),
     );
 
-    foreach ($this->registration_types as $type) {
+    foreach (REGISTRATION_TYPES as $type) {
       $form['registration']['registration_' . $type] = array(
         '#type' => 'select',
         '#title' => $this->t('Is @type registration active?', array('@type' => $type)),
@@ -168,7 +146,7 @@ class FestivalSettingsForm extends FormBase {
       '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_on_sale') ?: 0,
     );
 
-    foreach ($this->ticket_types as $type) {
+    foreach (TICKET_TYPES as $type) {
       $form['tickets'][$type] = array(
         '#type' => 'fieldset',
         '#title' => $this->t('@type tickets', array('@type' => $type)),

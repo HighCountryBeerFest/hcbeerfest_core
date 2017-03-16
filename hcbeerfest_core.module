@@ -7,6 +7,24 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 
+const TICKET_TYPES = array(
+  'vip',
+  'dd',
+  'regular',
+);
+
+const REGISTRATION_TYPES = array(
+  'brewery',
+  'sponsor',
+  'volunteer',
+);
+
+const TICKET_OPTIONS = array(
+  'tickets_on_sale_',
+  'tickets_price_',
+  'tickets_link_',
+);
+
 /**
  * Implements hook_help().
  */
@@ -34,7 +52,7 @@ function hcbeerfest_core_theme() {
         'release_party' => FALSE,
         'week_of_message' => FALSE,
         'tickets_on_sale' => FALSE,
-        'ticket_block_vip' => NULL,
+        'ticket_info' => NULL,
       ),
     ),
     'hcbeerfest_music' => array(
