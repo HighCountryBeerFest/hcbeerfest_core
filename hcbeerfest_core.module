@@ -32,6 +32,9 @@ function hcbeerfest_core_theme() {
       'template' => 'hcbeerfest_home',
       'variables' => array(
         'release_party' => FALSE,
+        'week_of_message' => FALSE,
+        'tickets_on_sale' => FALSE,
+        'ticket_block_vip' => NULL,
       ),
     ),
     'hcbeerfest_music' => array(

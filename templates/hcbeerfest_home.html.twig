@@ -1,3 +1,52 @@
+{% if week_of_message %}
+<div id="week-of-wrapper" class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="page-header">
+          <h1>The festival is this Saturday! What should I bring?</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+          <i class="icon fa fa-check-square fa-5x"></i>
+        </div>
+        <div class="text-center">
+          <h2>Your ID</h2>
+        </div>
+        <p class="lead">Remember to bring your ID, we check everyone's at the gate. We won't let you in if you don't have it or if you're under 21.</p>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+          <i class="icon fa fa-check-square fa-5x"></i>
+        </div>
+        <div class="text-center">
+          <h2>Cash</h2>
+        </div>
+        <p class="lead">Most of our vendors won't have access to the internet during the festival, so cash is the way to go. It makes it easier for everyone.</p>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+          <i class="icon fa fa-check-square fa-5x"></i>
+        </div>
+        <div class="text-center">
+          <h2>A good attitude</h2>
+        </div>
+        <p class="lead">We're all here to have fun and enjoy ourselves, the music, the food and the beer.</p>
+        <p class="lead">So be cool.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+{% endif %}
+
 {% if release_party %}
 <div class="wrapper">
   <div class="container">
@@ -18,9 +67,131 @@
 </div>
 {% endif %}
 
-{% if week_of %}
-{% endif %}
-
 {% if tickets_on_sale %}
-{% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="container-fluid tickets-block">
+        <div class="row">
 
+          <div class="col-xs-12 col-sm-4">
+
+            <div class="text-center">
+              <i class="icon fa fa-ticket fa-5x"></i>
+            </div>
+            <h2 class="text-center">VIP Tickets</h2>
+
+            <p class="lead">One Hour Early Entry, Free Swag &amp; Food, and all $40 ticket goodies.</p>
+
+            <div class="text-center">
+              {% if ticket_block_vip.on_sale %}
+              <a href="{{ ticket_block_vip.link }}"
+                 class="btn btn-success btn-lg"
+              {% else %}
+              <a href="#"
+                 class="btn btn-danger btn-lg"
+                 disabled="disabled"
+              {% endif %}
+                 data-ga-event
+                 data-ga-category="ticket_link_click"
+                 data-ga-label="homepage"
+                 data-ga-action="vip">
+              {% if ticket_block_vip.on_sale %}
+                $ {{ ticket_block_vip.price }}
+              {% else %}
+                SOLD OUT
+              {% endif %}
+              </a>
+            </div>
+
+          </div>
+
+          {#
+          <div class="col-xs-12 col-sm-4">
+            <div class="text-center">
+              <i class="icon fa fa-ticket fa-5x"></i>
+            </div>
+            <h2 class="text-center">General Admission</h2>
+
+            <p class="lead">Enjoy unlimited access to over 50 craft breweries, pairing seminars and live music (food costs extra).</p>
+
+            <div class="text-center">
+              <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+              <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
+                 class="btn btn-success btn-lg"
+              <?php else: ?>
+              <a href="#"
+                 class="btn btn-danger btn-lg"
+                 disabled="disabled"
+              <?php endif; ?>
+                 data-ga-event
+                 data-ga-category="ticket_link_click"
+                 data-ga-label="homepage"
+                 data-ga-action="general_admission">
+               <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+                $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
+               <?php else: ?>
+                SOLD OUT
+               <?php endif; ?>
+              </a>
+              <p>&nbsp;</p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4">
+            <div class="text-center">
+              <i class="icon fa fa-ticket fa-5x"></i>
+            </div>
+            <h2 class="text-center">Designated Driver</h2>
+
+            <p class="lead">Access to local food vendors, live music and the privilege to get your friends home safe.</p>
+
+            <div class="text-center">
+              <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+              <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>"
+                 class="btn btn-success btn-lg"
+              <?php else: ?>
+              <a href="#"
+                 class="btn btn-danger btn-lg"
+                 disabled="disabled"
+              <?php endif; ?>
+                 data-ga-event
+                 data-ga-category="ticket_link_click"
+                 data-ga-label="homepage"
+                 data-ga-action="vip">
+               <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+                $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
+               <?php else: ?>
+                SOLD OUT
+               <?php endif; ?>
+              </a>
+            </div>
+          </div>
+#}
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+          <i class="icon fa fa-ticket fa-5x"></i>
+        </div>
+        <h2 class="text-center">Buy tickets in person</h2>
+        <p class="text-center">General Admission tickets are still available at <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+        <p>&nbsp;</p>
+
+      <div class="text-center">
+        <i class="icon fa fa-beer fa-5x"></i>
+      </div>
+      <div class="page-header">
+        <h1 class="text-center">The Festivities</h1>
+      </div>
+      <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 27, 2016 from 3:00pm to 7:00pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
+      <p>&nbsp;</p>
+    </div>
+
+  </div>
+</div>
+
+{% endif %}
