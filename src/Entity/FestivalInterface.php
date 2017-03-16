@@ -123,4 +123,11 @@ interface FestivalInterface extends RevisionableInterface, RevisionLogInterface,
    */
   public function isPublic();
 
+  /**
+   * Gets a Option for the Festival config page.
+   *
+   * @return string
+   *   A string for the label on the config page.
+   */
+  public function getSettingsPageOption();
 }

@@ -7,11 +7,11 @@ entity.festival.collection:
   parent: system.admin_structure
   weight: 100
 
-#festival.admin.structure.settings:
-#  title: Festival settings
-#  description: 'Configure Festival entities'
-#  route_name: festival.settings
-#  parent: system.admin_config_system
+festival.admin.structure.settings:
+  title: Configure the festival
+  description: 'Configure different festival settings'
+  route_name: festival.settings
+  parent: system.admin_config_system
 
 # Brewery menu items definition
 entity.brewery.collection:
