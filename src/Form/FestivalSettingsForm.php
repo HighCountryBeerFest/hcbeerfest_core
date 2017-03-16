@@ -15,6 +15,23 @@ use Drupal\Core\Form\FormStateInterface;
 class FestivalSettingsForm extends FormBase {
 
   /**
+   * Implements a constructor.
+   */
+  public function __construct() {
+    $this->registration_types = array(
+      'brewery',
+      'sponsor',
+      'volunteer',
+    );
+
+    $this->ticket_types = array(
+      'regular',
+      'vip',
+      'dd',
+    );
+   }
+
+  /**
    * Returns a unique string identifying the form.
    *
    * @return string
@@ -33,13 +50,35 @@ class FestivalSettingsForm extends FormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if ($festival = $form_state->getValue('active_festival')) {
-      \Drupal::state()->set('hcbeerfest_core_festival', $festival);
+    // Sets the current year
+    \Drupal::state()->set('hcbeerfest_core_festival', $form_state->getValue('active_festival'));
+
+    // Sets the 'Week of' message
+    \Drupal::state()->set('hcbeerfest_core_week_of_message', $form_state->getValue('week_of_message'));
+
+    // Handles the registration types
+    foreach ($this->registration_types as $type) {
+      \Drupal::state()->set('hcbeerfest_core_registration_' . $type, $form_state->getValue('registration_' . $type));
     }
 
-    if ($registration_brewery = $form_state->getValue('registration_brewery')) {
-      \Drupal::state()->set('hcbeerfest_core_registration_brewery', $registration_brewery);
+    // Sets ticket release party message
+    \Drupal::state()->set('hcbeerfest_core_tickets_release_party', $form_state->getValue('ticket_release_party_message'));
+
+    // Sets tickets on sale.
+    \Drupal::state()->set('hcbeerfest_core_tickets_on_sale', $form_state->getValue('tickets_on_sale'));
+
+    $ticket_options = array(
+      'tickets_on_sale_',
+      'tickets_price_',
+      'tickets_link_',
+    );
+    foreach ($this->ticket_types as $type) {
+      foreach ($ticket_options as $option) {
+        \Drupal::state()->set('hcbeerfest_core_' . $option . $type, $form_state->getValue($option . $type));
+      }
     }
+
+    drupal_set_message($this->t('Updated festival configuration'));
   }
 
   /**
@@ -77,20 +116,87 @@ class FestivalSettingsForm extends FormBase {
       '#default_value' => \Drupal::state()->get('hcbeerfest_core_festival') ?: 0,
     );
 
-    $form['core']['registration'] = array(
-      '#type' => 'fieldset',
-      '#title' => $this->t('Registration settings'),
-    );
-
-    $form['core']['registration']['registration_brewery'] = array(
+    $form['core']['week_of_message'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Is brewery registration active?'),
+      '#title' => $this->t('Dispaly the "week of" message?'),
       '#options' => array(
         0 => $this->t('No'),
         1 => $this->t('Yes'),
       ),
-      '#default_value' => \Drupal::state()->get('hcbeerfest_core_registration_brewery') ?: 0,
+      '#default_value' => \Drupal::state()->get('hcbeerfest_core_week_of_message') ?: 0,
     );
+
+    $form['registration'] = array(
+      '#type' => 'fieldset',
+      '#title' => $this->t('Registration settings'),
+    );
+
+    foreach ($this->registration_types as $type) {
+      $form['registration']['registration_' . $type] = array(
+        '#type' => 'select',
+        '#title' => $this->t('Is @type registration active?', array('@type' => $type)),
+        '#options' => array(
+          0 => $this->t('No'),
+          1 => $this->t('Yes'),
+        ),
+        '#default_value' => \Drupal::state()->get('hcbeerfest_core_registration_' . $type) ?: 0,
+      );
+    }
+
+    $form['tickets'] = array(
+      '#type' => 'fieldset',
+      '#title' => $this->t('Tickets settings'),
+    );
+
+    $form['tickets']['ticket_release_party_message'] = array(
+      '#type' => 'select',
+      '#title' => $this->t('Should the ticket release party message show up?'),
+      '#options' => array(
+        0 => $this->t('No'),
+        1 => $this->t('Yes'),
+      ),
+      '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_release_party') ?: 0,
+    );
+
+    $form['tickets']['tickets_on_sale'] = array(
+      '#type' => 'select',
+      '#title' => $this->t('Are tickets on sale?'),
+      '#options' => array(
+        0 => $this->t('No'),
+        1 => $this->t('Yes'),
+      ),
+      '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_on_sale') ?: 0,
+    );
+
+    foreach ($this->ticket_types as $type) {
+      $form['tickets'][$type] = array(
+        '#type' => 'fieldset',
+        '#title' => $this->t('@type tickets', array('@type' => $type)),
+      );
+
+      $form['tickets'][$type]['tickets_on_sale_' . $type] = array(
+        '#type' => 'select',
+        '#title' => $this->t('Are @type tickets on sale?', array('@type' => $type)),
+        '#options' => array(
+          0 => $this->t('No'),
+          1 => $this->t('Yes'),
+        ),
+        '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_on_sale_' . $type) ?: 0,
+      );
+
+      $form['tickets'][$type]['tickets_link_' . $type] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('@type ticket link', array('@type' => $type)),
+        '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_link_' . $type),
+      );
+
+      $form['tickets'][$type]['tickets_price_' . $type] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('@type ticket price', array('@type' => $type)),
+        '#default_value' => \Drupal::state()->get('hcbeerfest_core_tickets_price_' . $type),
+      );
+
+    }
 
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = array(

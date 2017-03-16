@@ -19,11 +19,9 @@ class Home extends ControllerBase {
    */
   public function index() {
 
-    $release_party = TRUE;
-
     return array(
       '#theme' => 'hcbeerfest_home',
-      '#release_party' => $release_party,
+      '#release_party' => \Drupal::state()->get('hcbeerfest_core_tickets_release_party') ?: 0,
     );
   }
 }
