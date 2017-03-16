@@ -35,7 +35,10 @@ class FestivalSettingsForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     if ($festival = $form_state->getValue('active_festival')) {
       \Drupal::state()->set('hcbeerfest_core_festival', $festival);
-      drupal_set_message(t('The festival year has been updated'));
+    }
+
+    if ($registration_brewery = $form_state->getValue('registration_brewery')) {
+      \Drupal::state()->set('hcbeerfest_core_registration_brewery', $registration_brewery);
     }
   }
 
@@ -51,7 +54,6 @@ class FestivalSettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['Festival_settings']['#markup'] = 'Settings form for Festival entities. Manage field settings here.';
 
     $festival_query = \Drupal::entityQuery('festival');
     $festival_result = $festival_query->execute();
@@ -63,11 +65,31 @@ class FestivalSettingsForm extends FormBase {
       $festivals[$entity->id()] = $entity->getSettingsPageOption();
     }
 
-    $form['active_festival'] = array(
+    $form['core'] = array(
+      '#type' => 'fieldset',
+      '#title' => $this->t('Core settings'),
+    );
+
+    $form['core']['active_festival'] = array(
       '#type' => 'select',
       '#title' => $this->t('Select the active year'),
       '#options' => $festivals,
       '#default_value' => \Drupal::state()->get('hcbeerfest_core_festival') ?: 0,
+    );
+
+    $form['core']['registration'] = array(
+      '#type' => 'fieldset',
+      '#title' => $this->t('Registration settings'),
+    );
+
+    $form['core']['registration']['registration_brewery'] = array(
+      '#type' => 'select',
+      '#title' => $this->t('Is brewery registration active?'),
+      '#options' => array(
+        0 => $this->t('No'),
+        1 => $this->t('Yes'),
+      ),
+      '#default_value' => \Drupal::state()->get('hcbeerfest_core_registration_brewery') ?: 0,
     );
 
     $form['actions']['#type'] = 'actions';
