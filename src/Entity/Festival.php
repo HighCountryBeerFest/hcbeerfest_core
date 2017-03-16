@@ -275,6 +275,23 @@ class Festival extends RevisionableContentEntityBase implements FestivalInterfac
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['date'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Date'))
+      ->setDescription(t('The date of the festival'))
+      ->setSetting('datetime_type', 'date')
+      ->setRequired(TRUE)
+      ->setDisplayOptions('form', array(
+        'settings' => array(),
+        'type' => 'select',
+      ))
+      ->setDisplayOptions('view', array(
+	'label' => 'above',
+	'type' => 'string',
+	'weight' => -4,
+      ))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['public'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Is public?'))
       ->setDescription(t('Is this festival public?'))
