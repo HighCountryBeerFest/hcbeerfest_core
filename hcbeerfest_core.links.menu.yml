@@ -7,11 +7,11 @@ entity.festival.collection:
   parent: system.admin_structure
   weight: 100
 
-festival.admin.structure.settings:
-  title: Festival settings
-  description: 'Configure Festival entities'
-  route_name: festival.settings
-  parent: system.admin_config_system
+#festival.admin.structure.settings:
+#  title: Festival settings
+#  description: 'Configure Festival entities'
+#  route_name: festival.settings
+#  parent: system.admin_config_system
 
 # Brewery menu items definition
 entity.brewery.collection:
@@ -21,11 +21,11 @@ entity.brewery.collection:
   parent: system.admin_structure
   weight: 100
 
-brewery.admin.structure.settings:
-  title: Brewery settings
-  description: 'Configure Brewery entities'
-  route_name: brewery.settings
-  parent: system.admin_config_system
+#brewery.admin.structure.settings:
+#  title: Brewery settings
+#  description: 'Configure Brewery entities'
+#  route_name: brewery.settings
+#  parent: system.admin_config_system
 
 # Sponsor menu items definition
 entity.sponsor.collection:
@@ -35,11 +35,11 @@ entity.sponsor.collection:
   parent: system.admin_structure
   weight: 100
 
-sponsor.admin.structure.settings:
-  title: Sponsor settings
-  description: 'Configure Sponsor entities'
-  route_name: sponsor.settings
-  parent: system.admin_config_system
+#sponsor.admin.structure.settings:
+#  title: Sponsor settings
+#  description: 'Configure Sponsor entities'
+#  route_name: sponsor.settings
+#  parent: system.admin_config_system
 
 # Band menu items definition
 entity.band.collection:
@@ -49,11 +49,11 @@ entity.band.collection:
   parent: system.admin_structure
   weight: 100
 
-band.admin.structure.settings:
-  title: Band settings
-  description: 'Configure Band entities'
-  route_name: band.settings
-  parent: system.admin_config_system
+#band.admin.structure.settings:
+#  title: Band settings
+#  description: 'Configure Band entities'
+#  route_name: band.settings
+#  parent: system.admin_config_system
 
 # Vendor menu items definition
 entity.vendor.collection:
@@ -77,8 +77,8 @@ entity.seminar.collection:
   parent: system.admin_structure
   weight: 100
 
-seminar.admin.structure.settings:
-  title: Seminar settings
-  description: 'Configure Seminar entities'
-  route_name: seminar.settings
-  parent: system.admin_config_system
+#seminar.admin.structure.settings:
+#  title: Seminar settings
+#  description: 'Configure Seminar entities'
+#  route_name: seminar.settings
+#  parent: system.admin_config_system
